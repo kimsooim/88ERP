@@ -1,25 +1,57 @@
 @echo off
-echo [%DATE% %TIME%] 88OEM 메모리 업데이트 시작
-cd /d "C:\Projects\88oem"
+chcp 65001 >nul
+echo [%DATE% %TIME%] Starting 88OEM Integrated Memory Backup
+cd /d "C:\abot\ann-memory-repo"
 
-:: Node.js 설치 확인
+:: Check Node.js installation
 node --version >nul 2>&1
 if errorlevel 1 (
-    echo [ERROR] Node.js가 설치되지 않았습니다.
-    echo Node.js 설치 후 다시 실행해주세요.
-    echo 설치 링크: https://nodejs.org
+    echo [ERROR] Node.js is not installed
+    echo Please install Node.js and try again
+    echo Download: https://nodejs.org
     goto :end
 )
 
-:: 메모리 업데이트 실행
-echo [%DATE% %TIME%] 프로젝트 스캔 중...
-node mcp-memory-updater.js
+:: Create logs directory
+if not exist "logs" mkdir logs
 
-if errorlevel 1 (
-    echo [ERROR] 메모리 업데이트 실패
+:: Run integrated memory backup
+echo [%DATE% %TIME%] Checking project status...
+node mcp-memory-updater.js
+set PROJECT_RESULT=%errorlevel%
+
+echo [%DATE% %TIME%] Backing up Claude memory...
+node lib/memory-backup.js
+set CLAUDE_RESULT=%errorlevel%
+
+:: Check results and log
+if %PROJECT_RESULT% neq 0 (
+    echo [ERROR] Project status check failed
+    echo [%DATE% %TIME%] PROJECT_ERROR >> logs/backup.log
 ) else (
-    echo [SUCCESS] 메모리 업데이트 완료
+    echo [SUCCESS] Project status check completed
+    echo [%DATE% %TIME%] PROJECT_SUCCESS >> logs/backup.log
+)
+
+if %CLAUDE_RESULT% neq 0 (
+    echo [ERROR] Claude memory backup failed
+    echo [%DATE% %TIME%] CLAUDE_ERROR >> logs/backup.log
+) else (
+    echo [SUCCESS] Claude memory backup completed
+    echo [%DATE% %TIME%] CLAUDE_SUCCESS >> logs/backup.log
+)
+
+:: Check Git status
+echo [%DATE% %TIME%] Checking Git status...
+git status --porcelain >nul 2>&1
+if errorlevel 1 (
+    echo [WARNING] Git status check failed
+) else (
+    echo [INFO] Git repository is healthy
 )
 
 :end
-echo [%DATE% %TIME%] 작업 완료
+echo [%DATE% %TIME%] Integrated backup completed
+echo [%DATE% %TIME%] BATCH_COMPLETED >> logs/backup.log
+echo Press any key to exit...
+pause >nul

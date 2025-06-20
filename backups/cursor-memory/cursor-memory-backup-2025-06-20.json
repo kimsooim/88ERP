@@ -1,0 +1,145 @@
+{
+  "timestamp": "2025-06-20T10:45:00.000Z",
+  "version": "1.0",
+  "source": "Cursor MCP Memory",
+  "entities": [
+    {
+      "name": "Ann",
+      "entityType": "사용자",
+      "observations": [
+        "브랜드 캐릭터 관리 담당",
+        "Windows 환경에서 작업", 
+        "NAS 저장소 사용 (ds920)",
+        "한글 파일명을 영문으로 변환하는 rename.py 프로그램 사용"
+      ]
+    },
+    {
+      "name": "88OEMBoard",
+      "entityType": "프로젝트",
+      "observations": [
+        "위치: \\ds920\\web\\88oemboard",
+        "Notion 연동 기능",
+        "NAS 연동 기능", 
+        "대시보드 구현"
+      ]
+    },
+    {
+      "name": "88ERP",
+      "entityType": "Project",
+      "observations": [
+        "위치: \\ds920\\web\\88ERP",
+        "Notion 연동 기능",
+        "NAS 연동 기능",
+        "대시보드 구현 기능"
+      ]
+    },
+    {
+      "name": "쵸바(Choba)",
+      "entityType": "Brand", 
+      "observations": [
+        "볼체인 토이(Ball Chain Toy), 키링 제품군",
+        "총 22개 캐릭터",
+        "계란, 새우, 참치, 문어, 연어, 장어, 날치, 오이, 유부, 꽃게, 상어, 복어, 소세지, 햄, 마카롱, 붕어빵, 표고, 아보카도, 깻잎, 완두콩, 와사비락교, 단무지락교"
+      ]
+    },
+    {
+      "name": "코튼푸드(Cottonfood)",
+      "entityType": "Brand",
+      "observations": [
+        "시리즈: 01_mochi (28개 캐릭터), 02_cute, 03_general",
+        "볼체인, 키링 제품군",
+        "쌀알, 망개떡, 아보카도, 복숭아, 식빵, 햄버거, 풋고추, 홍고추, 가지, 당근, 바나나, 수박, 고추장떡볶이, 짜장떡볶이, 그린키위, 골드키위, 알밤, 스모어쿠키, 시루떡, 곶감, 스트롱베리, 오징어, 어묵, 고구마, 초코샘, 캔디바, 참외, 메론빵"
+      ]
+    },
+    {
+      "name": "코튼애니(Cottonani)",
+      "entityType": "Brand",
+      "observations": [
+        "주요 캐릭터: 라이독(Liedog)", 
+        "색상별: 브라운(Brown), 회색(Gray), 네이비(Navy)"
+      ]
+    },
+    {
+      "name": "쵸바_캐릭터_세트",
+      "entityType": "캐릭터세트",
+      "observations": [
+        "계란(egg), 새우(shrimp), 참치(tuna), 문어(octopus), 연어(salmon), 장어(eel)",
+        "날치(flying_fish_roe), 오이(cucumber), 유부(fried_tofu), 꽃게(crab), 상어(shark), 복어(bowfish)",
+        "소세지(sausage), 햄(ham), 마카롱(macaron), 붕어빵(fish_bread)",
+        "표고(mushroom), 아보카도(avocado), 깻잎(perilla_leaf), 완두콩(pea)",
+        "와사비락교(wasabi_rakkyo), 단무지락교(danmuji_rakkyo)"
+      ]
+    },
+    {
+      "name": "코튼푸드_캐릭터_세트", 
+      "entityType": "캐릭터세트",
+      "observations": [
+        "쌀알(rice), 망개떡(manggaetteok), 아보카도(avocado), 복숭아(peach), 식빵(bread), 햄버거(hamburger)",
+        "풋고추(green_pepper), 홍고추(red_pepper), 가지(aubergine), 당근(carrot), 바나나(banana), 수박(watermelon)",
+        "고추장떡볶이(gochujang_tteokbokki), 짜장떡볶이(jajang_tteokbokki), 그린키위(greenkiwi), 골드키위(goldkiwi)",
+        "알밤(chestnut), 스모어쿠키(smore_cookies), 시루떡(sirutteok), 곶감(persimmon)",
+        "스트롱베리(strongberry), 오징어(squid), 어묵(fishcake), 고구마(sweetpotato)",
+        "초코샘(chocosam), 캔디바(candybar), 참외(korean_melon), 메론빵(melonbread)"
+      ]
+    },
+    {
+      "name": "MCP_Git_동기화_시스템",
+      "entityType": "시스템",
+      "observations": [
+        "Git 저장소: C:/abot/ann-memory-repo",
+        "로컬 메모리: mcp/cursor_helpers.py 모듈",
+        "자동 동기화: 5분 간격",
+        "지원 기능: 캐릭터 검색, 메모리 통계, 데이터 내보내기"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from": "Ann",
+      "to": "쵸바(Choba)",
+      "relationType": "운영"
+    },
+    {
+      "from": "Ann", 
+      "to": "코튼푸드(Cottonfood)",
+      "relationType": "운영"
+    },
+    {
+      "from": "Ann",
+      "to": "코튼애니(Cottonani)",
+      "relationType": "운영"
+    },
+    {
+      "from": "Ann",
+      "to": "88ERP", 
+      "relationType": "프로젝트 진행"
+    },
+    {
+      "from": "쵸바(Choba)",
+      "to": "쵸바_캐릭터_세트",
+      "relationType": "포함"
+    },
+    {
+      "from": "코튼푸드(Cottonfood)",
+      "to": "코튼푸드_캐릭터_세트",
+      "relationType": "포함"
+    },
+    {
+      "from": "Ann",
+      "to": "MCP_Git_동기화_시스템",
+      "relationType": "사용"
+    }
+  ],
+  "metadata": {
+    "entityCount": 9,
+    "relationCount": 7,
+    "extractedBy": "Cursor MCP",
+    "extractionMethod": "MCP memory:read_graph",
+    "characterCount": {
+      "쵸바": 22,
+      "코튼푸드": 28,
+      "코튼애니": 3
+    },
+    "totalCharacters": 53
+  }
+}

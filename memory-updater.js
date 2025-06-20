@@ -9,7 +9,7 @@ const { execSync } = require('child_process');
 
 class ProjectMemoryUpdater {
     constructor() {
-        this.projectPath = 'C:\Projects\88oem';
+        this.projectPath = 'C:\\Projects\\88oem';
         this.lastUpdate = new Date();
         this.watchedFiles = [
             'package.json',

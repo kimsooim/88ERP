@@ -9,7 +9,7 @@ const { execSync } = require('child_process');
 
 class MCPMemoryUpdater {
     constructor() {
-        this.projectPath = 'C:\Projects\88oem';
+        this.projectPath = 'C:\\Projects\\88oem';
         this.mcpCommands = [];
     }
 

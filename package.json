@@ -7,7 +7,13 @@
     "dev": "next dev -H 0.0.0.0 -p 3001",
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p 3001",
-    "lint": "next lint"
+    "lint": "next lint",
+    "backup:claude": "node lib/memory-backup.js",
+    "backup:project": "node mcp-memory-updater.js",
+    "backup:all": "npm run backup:project && npm run backup:claude",
+    "backup:integrated": "node scripts/integrated-backup.js",
+    "scheduler:setup": "powershell -ExecutionPolicy Bypass -File scripts/setup-scheduler.ps1",
+    "scheduler:remove": "powershell -ExecutionPolicy Bypass -File scripts/setup-scheduler.ps1 -Remove"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.14",
