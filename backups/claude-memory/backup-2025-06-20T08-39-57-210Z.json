@@ -1,0 +1,23 @@
+{
+  "timestamp": "2025-06-20T08:39:57.208Z",
+  "version": "1.0",
+  "entities": [],
+  "relations": [],
+  "metadata": {
+    "entityCount": 0,
+    "relationCount": 0,
+    "extractedBy": "ClaudeMemoryBackupSystem"
+  },
+  "backupInfo": {
+    "filename": "backup-2025-06-20T08-39-57-210Z.json",
+    "filepath": "C:\\abot\\ann-memory-repo\\backups\\claude-memory\\backup-2025-06-20T08-39-57-210Z.json",
+    "createdAt": "2025-06-20T08:39:57.210Z",
+    "systemInfo": {
+      "totalFiles": 0,
+      "jsFiles": 0,
+      "jsonFiles": 0,
+      "totalSize": 0,
+      "lastModified": null
+    }
+  }
+}
