@@ -1,0 +1,63 @@
+{
+  "user_profile": {
+    "name": "Ann",
+    "os": "Windows",
+    "workspace": "\\\\ds920\\web\\88ERP",
+    "role": "캐릭터 굿즈 제작 및 OEM 생산, 팝업스토어 운영, 협업 상품 기획",
+    "tools": ["Google Sheets", "BigQuery", "Ecount API", "n8n", "MCP"],
+    "work_style": "빠르고 실용적, 효율적이고 직설적",
+    "automation_focus": "워크플로우 구축과 자동화"
+  },
+  "projects": {
+    "88ERP": {
+      "location": "\\\\ds920\\web\\88ERP",
+      "features": ["Notion 연동", "NAS 연동", "대시보드 구현"]
+    },
+    "88OEMBoard": {
+      "location": "\\\\ds920\\web\\88oemboard", 
+      "features": ["Notion 연동", "NAS 연동", "대시보드 구현"]
+    }
+  },
+  "brands": {
+    "쵸바(Choba)": {
+      "product_type": "볼체인 토이, 키링",
+      "character_count": 22,
+      "characters": {
+        "계란": "egg", "새우": "shrimp", "참치": "tuna", "문어": "octopus",
+        "연어": "salmon", "장어": "eel", "날치": "flying_fish_roe", "오이": "cucumber",
+        "유부": "fried_tofu", "꽃게": "crab", "상어": "shark", "복어": "bowfish",
+        "소세지": "sausage", "햄": "ham", "마카롱": "macaron", "붕어빵": "fish_bread",
+        "표고": "mushroom", "아보카도": "avocado", "깻잎": "perilla_leaf", "완두콩": "pea",
+        "와사비락교": "wasabi_rakkyo", "단무지락교": "danmuji_rakkyo"
+      }
+    },
+    "코튼푸드(Cottonfood)": {
+      "product_type": "볼체인, 키링",
+      "series": ["01_mochi (28개)", "02_cute", "03_general"],
+      "characters": {
+        "쌀알": "rice", "망개떡": "manggaetteok", "아보카도": "avocado", "복숭아": "peach",
+        "식빵": "bread", "햄버거": "hamburger", "풋고추": "green_pepper", "홍고추": "red_pepper",
+        "가지": "aubergine", "당근": "carrot", "바나나": "banana", "수박": "watermelon",
+        "고추장떡볶이": "gochujang_tteokbokki", "짜장떡볶이": "jajang_tteokbokki",
+        "그린키위": "greenkiwi", "골드키위": "goldkiwi", "알밤": "chestnut",
+        "스모어쿠키": "smore_cookies", "시루떡": "sirutteok", "곶감": "persimmon",
+        "스트롱베리": "strongberry", "오징어": "squid", "어묵": "fishcake",
+        "고구마": "sweetpotato", "초코샘": "chocosam", "캔디바": "candybar",
+        "참외": "korean_melon", "메론빵": "melonbread"
+      }
+    },
+    "코튼애니(Cottonani)": {
+      "main_character": "라이독(Liedog)",
+      "colors": ["브라운(Brown)", "회색(Gray)", "네이비(Navy)"]
+    }
+  },
+  "memory_relations": [
+    {"from": "Ann", "to": "쵸바(Choba)", "type": "운영"},
+    {"from": "Ann", "to": "코튼푸드(Cottonfood)", "type": "운영"},
+    {"from": "Ann", "to": "코튼애니(Cottonani)", "type": "운영"},
+    {"from": "Ann", "to": "88ERP", "type": "프로젝트 진행"}
+  ],
+  "created": "2025-06-20",
+  "last_sync": "2025-06-20T15:00:00",
+  "note": "Ann의 브랜드 및 프로젝트 정보 통합 저장소 - MCP Git 동기화"
+}
