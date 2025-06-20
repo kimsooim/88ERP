@@ -1,0 +1,37 @@
+{
+  "timestamp": "2025-06-20T09:20:02.726Z",
+  "version": "1.0",
+  "entities": [
+    {
+      "name": "Ann",
+      "entityType": "사용자",
+      "observations": [
+        "브랜드 캐릭터 관리 담당",
+        "Windows 환경에서 작업",
+        "NAS 저장소 사용 (ds920)"
+      ]
+    },
+    {
+      "name": "88ERP",
+      "entityType": "Project",
+      "observations": [
+        "위치: \\\\ds920\\\\web\\\\88ERP",
+        "Notion 연동 기능",
+        "NAS 연동 기능"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from": "Ann",
+      "to": "88ERP",
+      "relationType": "프로젝트 진행"
+    }
+  ],
+  "metadata": {
+    "entityCount": 2,
+    "relationCount": 1,
+    "extractedBy": "MemoryExtractor",
+    "extractionMethod": "MCP memory:read_graph"
+  }
+}
